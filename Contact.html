@@ -43,33 +43,23 @@
                     <td><a href="https://www.linkedin.com/in/henry-tran-308a8a227/">Here</a></td>
                 </tr>
             </table><br>
-            <form>
+            <form id="contact_form" action="https://httpbin.org/post" method="POST">
                 <fieldset>
                  <legend>Contact Me:</legend>
-                 <label for="fname">First name:</label>
-                 <input type="text" id="fname" name="fname"><br>
-                 <label for="lname">Last name:</label>
-                 <input type="text" id="lname" name="lname"><br>
+                 <label for="fname">Full Name:</label>
+                 <input type="text" id="fname" name="fname" required><br>
                  <label for="email">Email:</label>
-                 <input type="email" id="email" name="email"><br>
+                 <input type="email" id="email" name="email" required><br>
 
-                 <label for="reason">Choose your reason:</label>
-                 <input list="reasons" name="reason" id="reason">
-                 <datalist id="reasons">
-                   <option value="Recruitment">
-                   <option value="Connection">
-                   <option value="Concerns">
-                   <option value="Advice">
-                   <option value="Other">
-                 </datalist><br>
-
-                 <label for="response">Response:</label>
-                 <br>
-                 <textarea id="response"></textarea><br>  
+                 <label for="comments">Comments:</label>
+                 <textarea id="comments" name="comments" required></textarea><br> 
+                 <output name="info" for="fname email comments"></output>
+                 <output name="error" for="fname email comments"></output> 
+                 <input type="hidden" name="possible_bot" value="true">
                  <input type="submit" value="Submit">
                 </fieldset>
             </form>
-               
+
         </main>
         <footer class="footer">
             <p>Copyright <span id="user">Henry Tran</span> 2025</p>
@@ -78,9 +68,7 @@
             </address>
             <p>Contact me <a href="Contact.html">here</a></p>
         </footer>
-        <script>
-
-        </script>
+        <script src="portfolio.js"></script>
         <noscript>Your browser does not support JavaScript!</noscript>
     </body>
 </html>
