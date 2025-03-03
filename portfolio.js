@@ -10,6 +10,7 @@
 // form.addEventListener("submit", logSubmit);
 
 document.addEventListener("DOMContentLoaded", () => {
+    document.getElementById("togglebutton").hidden = false;
     setSavedTheme();
     const form = document.getElementById("contact_form");
     const nameInput = document.getElementById("fname");
@@ -95,6 +96,9 @@ document.addEventListener("DOMContentLoaded", () => {
         if (com === 0) formErrors.push("No comments recorded.");
         if (com === 1) formErrors.push("Comment exceeds character limit.");
         if (com === 2) formErrors.push("Invalid characters in comment.");
+        if(formErrors.length == 0) {
+            document.getElementById("confor").hidden = false
+        }
     }
 
     form.addEventListener("submit", (e) => {

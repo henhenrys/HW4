@@ -26,7 +26,7 @@
                     <li><a href="Theme.html">Theme </a></li>
                     <li><a href="static/Resume-HT.pdf" target="_blank">Resume</a></li>
                 </ul>
-                <button onclick="toggleTheme()" id="togglebutton">Night Mode</button>
+                <button onclick="toggleTheme()" id="togglebutton" hidden>Night Mode</button>
                 <input type="checkbox" id="themeToggle" onclick="toggleTheme()" hidden>
             </nav>
         </header>
@@ -57,7 +57,7 @@
                  <output name="form-info" for="fname email comments"></output>
                  <output name="form-error" for="fname email comments"></output> 
                  <input type="hidden" name="possible_bot" value="true">
-                 <input type="submit"></input>
+                 <input type="submit" id="confor" hidden></input>
                 </fieldset>
             </form>
 
