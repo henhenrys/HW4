@@ -31,33 +31,34 @@
             </nav>
         </header>
         <main class="landing">
-            <table style="border: 1px solid black;">
-                <caption>Connect With Me Here</caption>
-                <colgroup>
-                    <col span="2" id="cols">
-                </colgroup>
-                <tr>
-                    <th>GitHub</th>
-                    <th>LinkedIn</th>
-                </tr>
-                <tr>
-                    <td><a href="https://github.com/henhenrys">Here</a></td>
-                    <td><a href="https://www.linkedin.com/in/henry-tran-308a8a227/">Here</a></td>
-                </tr>
-            </table><br>
-            <form id="contact_form" action="https://httpbin.org/post" method="POST">
+            <form id="themeSelect">
                 <fieldset>
                  <legend>Contact Me:</legend>
-                 <label for="fname">Full Name:</label>
-                 <input id="fname" name="fname"><br>
-                 <label for="email">Email:</label>
-                 <input id="email" name="email"><br>
-                 <label for="comments">Comments:</label><br>
-                 <textarea id="comments" name="comments"></textarea><br> 
-                 <output name="form-info" for="fname email comments"></output>
-                 <output name="form-error" for="fname email comments"></output> 
-                 <input type="hidden" name="possible_bot" value="true">
-                 <input type="submit"></input>
+                 <label for="color">Color:</label>
+                 <select id="color" name="color">
+                    <option value="red">Red</option>
+                    <option value="purple">Purple</option>
+                    <option value="black">Black</option>
+                    <option value="white">White</option>
+                </select>
+                <br>
+                 <label for="bg_color">Background Color:</label>
+                 <select id="bg_color" name="bg_color">
+                    <option value="red">Red</option>
+                    <option value="purple">Purple</option>
+                    <option value="black">Black</option>
+                    <option value="white">White</option>
+                </select>
+                <br>
+                 <label for="font">Font:</label><br>
+                 <select id="font" name="font">
+                    <option value="arial">Arial</option>
+                    <option value="Helvetica">Helvetica</option>
+                    <option value="Times">Times</option>
+                    <option value="monospace">monospace</option>
+                </select>
+                 <br> 
+                 <input type="submit" onclick="setFunTheme()"></input>
                 </fieldset>
             </form>
 

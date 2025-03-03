@@ -110,19 +110,55 @@ document.addEventListener("DOMContentLoaded", () => {
 function setTheme(theme) {
     const root = document.documentElement;
     const toggle = document.getElementById("togglebutton")
+    const colo = document.getElementById("color")
+    const bg_colo = document.getElementById("bg_color")
+    const fon = document.getElementById("font")
     if (theme === 'evil'){
         root.style.setProperty('background', 'rgb(46, 43, 43)');
         root.style.setProperty('color', 'white');
         toggle.innerText = "Light Mode";
     }
-    else{
+    else if (theme === 'good'){
         root.style.setProperty('background', 'white');
         root.style.setProperty('color', 'black');
         toggle.innerText = "Night Mode";
     }
+    else {
+        if(localStorage.getItem('bgtheme')) {
+            console.log("do we get here")
+            console.log(localStorage.getItem('bgtheme'))
+            console.log(localStorage.getItem('fonttheme'))
+            console.log(localStorage.getItem('theme'))
+            root.style.setProperty('background', localStorage.getItem('bgtheme'));
+            root.style.setProperty('color', localStorage.getItem('theme'));
+            root.style.setProperty('font-family', localStorage.getItem('fonttheme'));
+            toggle.innerText = "Light Mode";
+        }
+        else {
+            root.style.setProperty('background', bg_colo.value);
+            root.style.setProperty('color', colo.value);
+            root.style.setProperty('font-family', fon.value);
+            toggle.innerText = "Light Mode";
+        }
+    }
 }
-function toggleTheme()
-{
+
+function setFunTheme() {
+    const colo = document.getElementById("color")
+    const bg_colo = document.getElementById("bg_color")
+    const fon = document.getElementById("font")
+    localStorage.setItem('theme', colo.value);
+    localStorage.setItem('bgtheme', bg_colo.value);
+    localStorage.setItem('fonttheme', fon.value);
+    setTheme(colo.value)
+}
+
+document.getElementById("themeSelect").addEventListener("submit", function(event){
+    event.preventDefault()
+    setFunTheme();
+  });
+
+function toggleTheme() {
     const currTheme = localStorage.getItem('theme') || 'good';
     const newTheme = currTheme === 'good'? 'evil': 'good';
     localStorage.setItem('theme', newTheme);
@@ -130,10 +166,11 @@ function toggleTheme()
 }
 
 function setSavedTheme() {
-    console.log("we here")
     const savedTheme = localStorage.getItem('theme');
     if(savedTheme) {
         setTheme(savedTheme);
-        document.getElementById('themeToggle').checked = (savedTheme === 'evil');
+        if(savedTheme == 'evil') {
+            document.getElementById('themeToggle').checked = (savedTheme === 'evil');
+        }
     }
 }
