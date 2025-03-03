@@ -1,16 +1,20 @@
 :root {
     --nav-text: #000000;
+    --nav-text-alt: #fff;
     --hover-text: rgb(170, 228, 253);
   }
 
 body {
-    background-color: rgb(170, 228, 253);
     font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
 }
 
 h1:has(+ dl) {
     font-weight: bold;
     color: rgb(140, 121, 47);
+}
+
+button:hover {
+    cursor: pointer;
 }
 
 @scope (.footer) {
@@ -127,9 +131,9 @@ main #programming {
 }
   
 .navbar a {
-    color: var(--nav-text, black);
     font-weight: bold;
     transition: all 0.5s ease-out;
+    color: rgb(251, 191, 94);
 }
   
 .navbar a:hover {
@@ -171,4 +175,20 @@ main #programming {
     to {
       background-position: -100%;
     }
+}
+
+input[id="fname"],
+input[id="email"],
+textarea[id=comments]{
+    width: 100%;
+    border: 1px solid #333;
+    box-sizing: border-box;
+}
+
+input:invalid, textarea:invalid {
+    box-shadow: 0 0 5px 1px red;
+}
+
+input:valid, textarea:valid {
+    box-shadow: 0 0 5px 1px green;
 }

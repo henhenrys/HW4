@@ -25,7 +25,8 @@
                     <li><a href="Contact.html">Contact </a></li>
                     <li><a href="static/Resume-HT.pdf" target="_blank">Resume</a></li>
                 </ul>
-                <button>Night Mode</button>
+                <button onclick="toggleTheme()" id="togglebutton">Night Mode</button>
+                <input type="checkbox" id="themeToggle" onclick="toggleTheme()" hidden>
             </nav>
         </header>
         <main class="landing">
@@ -47,16 +48,15 @@
                 <fieldset>
                  <legend>Contact Me:</legend>
                  <label for="fname">Full Name:</label>
-                 <input type="text" id="fname" name="fname" required><br>
+                 <input id="fname" name="fname"><br>
                  <label for="email">Email:</label>
-                 <input type="email" id="email" name="email" required><br>
-
-                 <label for="comments">Comments:</label>
-                 <textarea id="comments" name="comments" required></textarea><br> 
-                 <output name="info" for="fname email comments"></output>
-                 <output name="error" for="fname email comments"></output> 
+                 <input id="email" name="email"><br>
+                 <label for="comments">Comments:</label><br>
+                 <textarea id="comments" name="comments"></textarea><br> 
+                 <output name="form-info" for="fname email comments"></output>
+                 <output name="form-error" for="fname email comments"></output> 
                  <input type="hidden" name="possible_bot" value="true">
-                 <input type="submit" value="Submit">
+                 <input type="submit"></input>
                 </fieldset>
             </form>
 

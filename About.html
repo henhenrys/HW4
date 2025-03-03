@@ -34,7 +34,8 @@
                     <li><a href="Contact.html">Contact </a></li>
                     <li><a href="static/Resume-HT.pdf" target="_blank">Resume</a></li>
                 </ul>
-                <button>Night Mode</button>
+                <button onclick="toggleTheme()" id="togglebutton">Night Mode</button>
+                <input type="checkbox" id="themeToggle" onclick="toggleTheme()" hidden>
             </nav>
         </header>
         <main class="content">
@@ -72,7 +73,7 @@
             </address>
             <p>Contact me <a href="Contact.html">here</a></p>
         </footer>
-        <script>
+        <script src="portfolio.js">
 
         </script>
         <noscript>Your browser does not support JavaScript!</noscript>
